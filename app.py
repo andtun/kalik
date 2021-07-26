@@ -39,7 +39,7 @@ def my_group():
 @get("/342hard")
 def my_group():
     msg = gen_kalik(hard, minw=25)
-    write_msg(2, msg)
+    write_msg(1, msg)
     return 0
 
 @post("/")
