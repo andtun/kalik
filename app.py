@@ -6,7 +6,7 @@ from bottle import *
 with open("kalik.txt", encoding='utf8') as f:
     text = f.read()
 
-text_model_2 = markovify.Text(text, state_size=3, well_formed=False)
+text_model_2 = markovify.Text(text, state_size=2, well_formed=False)
 
 def gen_kalik():
     res = None
