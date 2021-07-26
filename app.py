@@ -13,7 +13,7 @@ hard = markovify.Text(text, state_size=3, well_formed=False)
 vk = vk_api.VkApi(token='4d0e510aa01f5bf9cb5e68d8620939d03f11b939347c58acdff5f123458e662b0eafae16f92f3038aa717') #Авторизоваться как сообщество
 
 def write_msg(chat_id, s):
-    vk.method('messages.send', {'chat_id':1,'message':s, 'random_id':hash(s)})
+    vk.method('messages.send', {'chat_id':chat_id,'message':s, 'random_id':hash(s)})
 
 def gen_kalik(model, minw=35):
     res = None
@@ -39,7 +39,7 @@ def my_group():
 @get("/342hard")
 def my_group():
     msg = gen_kalik(hard, minw=25)
-    write_msg(1, msg)
+    write_msg(2, msg)
     return 0
 
 @post("/")
