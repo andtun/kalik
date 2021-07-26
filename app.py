@@ -17,15 +17,15 @@ def gen_kalik():
 
 @get("/")
 def main():
-    return static_file('Порфирьевич.htm', root='.')
+    return static_file('main.htm', root='.')
 
 @post("/")
 def new_kalik_text():
     return gen_kalik()
 
-@get("/Порфирьевич_files/<filename>")
+@get("/main_files/<filename>")
 def any_file(filename):
-    return static_file(filename, root='/Порфирьевич_files')
+    return static_file(filename, root='/main_files')
 
 # run the server
 run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
