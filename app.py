@@ -20,7 +20,7 @@ def main():
     return static_file('main.htm', root='.')
 
 @get("/favicon.ico")
-def main():
+def main_ico():
     return static_file('favicon.ico', root='.')
 
 @post("/")
