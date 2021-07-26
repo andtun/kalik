@@ -19,6 +19,10 @@ def gen_kalik():
 def main():
     return static_file('main.htm', root='.')
 
+@get("/favicon.ico")
+def main():
+    return static_file('favicon.ico', root='.')
+
 @post("/")
 def new_kalik_text():
     return gen_kalik()
