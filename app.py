@@ -30,7 +30,7 @@ def new_kalik_text():
 
 @post("/hard")
 def new_kalik_text():
-    return gen_kalik(hard, minw=20)
+    return gen_kalik(hard, minw=25)
 
 @get("/main_files/<filename>")
 def any_file(filename):
