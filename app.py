@@ -23,6 +23,9 @@ def main():
 def new_kalik_text():
     return gen_kalik()
 
+@get("/Порфирьевич_files/<filename>")
+def any_file(filename):
+    return static_file(filename, root='/Порфирьевич_files')
 
 # run the server
 run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
