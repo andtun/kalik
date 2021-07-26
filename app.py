@@ -9,10 +9,10 @@ with open("kalik.txt", encoding='utf8') as f:
 easy = markovify.Text(text, state_size=2, well_formed=False)
 hard = markovify.Text(text, state_size=3, well_formed=False)
 
-def gen_kalik(model):
+def gen_kalik(model, minw=35):
     res = None
     while res is None:
-        res = model.make_sentence(min_words=35, max_words=100, tries=100)
+        res = model.make_sentence(min_words=minw, max_words=100, tries=100)
     return res
 
 
@@ -30,7 +30,7 @@ def new_kalik_text():
 
 @post("/hard")
 def new_kalik_text():
-    return gen_kalik(hard)
+    return gen_kalik(hard, minw=20)
 
 @get("/main_files/<filename>")
 def any_file(filename):
