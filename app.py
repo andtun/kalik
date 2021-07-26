@@ -17,7 +17,7 @@ def gen_kalik():
 
 @get("/")
 def main():
-    return static_file('Порфирьевич.htm')
+    return static_file('Порфирьевич.htm', root='.')
 
 @post("/")
 def new_kalik_text():
