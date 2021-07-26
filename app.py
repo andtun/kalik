@@ -17,6 +17,10 @@ def gen_kalik():
 
 @get("/")
 def main():
+    return static_file('Порфирьевич.htm')
+
+@post("/")
+def new_kalik_text():
     return gen_kalik()
 
 
