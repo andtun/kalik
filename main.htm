@@ -34,6 +34,37 @@
 	  xhr.send('');
 	}
 
+	 function load_hard() {
+      document.getElementById("button_push").disabled = true;
+      document.getElementById("loader_div").innerHTML = `<div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>`;
+	  var xhr = new XMLHttpRequest();
+
+	  xhr.onreadystatechange = function() {
+	    if (xhr.readyState === 4) {
+	      document.getElementById("text_here").textContent = xhr.response;
+	      document.getElementById("button_push").disabled = false;
+	      document.getElementById("loader_div").innerHTML = "";
+	    }
+	  }
+
+	  xhr.open('POST', '/hard', true);
+	  xhr.send('');
+	}
+
 	window.onload = load;
   </script>
 
@@ -136,7 +167,7 @@
   </style>
 
 
-</head><body class="has-navbar-fixed-top"><noscript><strong>К сожалению, Калик не работает без включенного JavaScript.</strong></noscript><div data-v-0a1f7153="" class="main"><nav data-v-0a1f7153="" role="navigation" aria-label="main navigation" class="navbar is-fixed-top"><div class="navbar-brand"><a data-v-0a1f7153="" href="" aria-current="page" class="navbar-item router-link-exact-active router-link-active"><img data-v-0a1f7153="" src="./main_files/logo.jpg" alt="НейроКалик" class="neuro-logo"></a><a role="button" aria-label="menu" class="navbar-burger burger"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div><div class="navbar-menu"><div class="navbar-start"></div></div></nav><section data-v-0a1f7153="" class="section"><div data-v-0a1f7153="" class="columns is-mobile"><div data-v-0a1f7153="" class="column is-full"><div data-v-04b282fc="" data-v-0a1f7153=""><div data-v-efc1994e="" data-v-04b282fc=""><!----><div data-v-efc1994e="" class="box"><div data-v-efc1994e="" id="editorjs" class="ql-container"><div class="ql-editor" data-gramm="false" contenteditable="true" data-placeholder=""><p><span id="text_here" style="color: rgb(0, 0, 0);"></span></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div></div><div data-v-efc1994e="" class="columns is-mobile controls-pane"><div data-v-efc1994e="" class="column is-1"></div><div data-v-efc1994e="" class="column has-text-centered"><button data-v-efc1994e="" type="button" class="button transform-btn is-small is-primary" onclick="load();" id="button_push"><span style="font-size: 17px;"> Новый kalik!  </span> <!----></button><div class="loader-inner" style="">
+</head><body class="has-navbar-fixed-top"><noscript><strong>К сожалению, Калик не работает без включенного JavaScript.</strong></noscript><div data-v-0a1f7153="" class="main"><nav data-v-0a1f7153="" role="navigation" aria-label="main navigation" class="navbar is-fixed-top"><div class="navbar-brand"><a data-v-0a1f7153="" href="" aria-current="page" class="navbar-item router-link-exact-active router-link-active"><img data-v-0a1f7153="" src="./main_files/logo.jpg" alt="НейроКалик" class="neuro-logo"></a><a role="button" aria-label="menu" class="navbar-burger burger"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div><div class="navbar-menu"><div class="navbar-start"></div></div></nav><section data-v-0a1f7153="" class="section"><div data-v-0a1f7153="" class="columns is-mobile"><div data-v-0a1f7153="" class="column is-full"><div data-v-04b282fc="" data-v-0a1f7153=""><div data-v-efc1994e="" data-v-04b282fc=""><!----><div data-v-efc1994e="" class="box"><div data-v-efc1994e="" id="editorjs" class="ql-container"><div class="ql-editor" data-gramm="false" contenteditable="true" data-placeholder=""><p><span id="text_here" style="color: rgb(0, 0, 0);"></span></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div></div><div data-v-efc1994e="" class="columns is-mobile controls-pane"><div data-v-efc1994e="" class="column is-1"></div><div data-v-efc1994e="" class="column has-text-centered"><button data-v-efc1994e="" type="button" class="button transform-btn is-small is-primary" onclick="load();" id="button_push"><span style="font-size: 17px;"> Easy kalik  </span> <!----></button>&nbsp;<button data-v-efc1994e="" type="button" class="button transform-btn is-small is-primary" onclick="load_hard();" id="button_push"><span style="font-size: 17px;"> Hard kalik  </span> <!----></button><div class="loader-inner" style="">
   
   	<div id="loader_div">
     

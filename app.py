@@ -6,12 +6,13 @@ from bottle import *
 with open("kalik.txt", encoding='utf8') as f:
     text = f.read()
 
-text_model_2 = markovify.Text(text, state_size=2, well_formed=False)
+easy = markovify.Text(text, state_size=2, well_formed=False)
+hard = markovify.Text(text, state_size=3, well_formed=False)
 
-def gen_kalik():
+def gen_kalik(model):
     res = None
     while res is None:
-        res = text_model_2.make_sentence(min_words=35, max_words=100, tries=100)
+        res = model.make_sentence(min_words=35, max_words=100, tries=100)
     return res
 
 
@@ -25,7 +26,11 @@ def main_ico():
 
 @post("/")
 def new_kalik_text():
-    return gen_kalik()
+    return gen_kalik(easy)
+
+@post("/hard")
+def new_kalik_text():
+    return gen_kalik(hard)
 
 @get("/main_files/<filename>")
 def any_file(filename):
