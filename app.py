@@ -22,7 +22,7 @@ def gen_kalik(model, minw=35):
     res = None
     while res is None:
         res = model.make_sentence(min_words=minw, max_words=100, tries=100)
-    return res
+    return res.replace(' -', '\n-')
 
 
 @get("/")
