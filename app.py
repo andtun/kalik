@@ -50,6 +50,10 @@ def new_kalik_text():
 def new_kalik_text():
     return gen_kalik(hard, minw=25)
 
+@post("/verify")
+def verify():
+    return "f78b12c7"
+
 @get("/main_files/<filename>")
 def any_file(filename):
     return static_file(filename, root='./main_files')
