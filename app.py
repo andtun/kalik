@@ -52,6 +52,7 @@ def new_kalik_text():
 
 @post("/verify")
 def verify():
+    print(request.json)
     return "f78b12c7"
 
 @get("/main_files/<filename>")
