@@ -15,6 +15,9 @@ vk = vk_api.VkApi(token='4d0e510aa01f5bf9cb5e68d8620939d03f11b939347c58acdff5f12
 def write_msg(chat_id, s):
     vk.method('messages.send', {'chat_id':chat_id,'message':s, 'random_id':hash(s)})
 
+def write_user(user_id, s):
+    vk.method('messages.send', {'user_id':user_id,'message':s, 'random_id':hash(s)})
+
 def gen_kalik(model, minw=35):
     res = None
     while res is None:
@@ -52,7 +55,11 @@ def new_kalik_text():
 
 @post("/verify")
 def verify():
-    print(request.json)
+    r = request.json
+    if r['type'] == 'message_new':
+        user_id = r['object']['user_id']
+        s = gen_kalik(easy)
+        write_user(user_id, s)
     return "ok"
 
 @get("/main_files/<filename>")
