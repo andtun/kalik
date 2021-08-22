@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- вёрстка взята у Порфирьевича -->
+<!-- saved from url=(0023)https://porfirevich.ru/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>НейроКалик</title><link rel="icon" href="favicon.ico" type="image/x-icon"><meta http-equiv="Content-Security-Policy" content="default-src *; style-src &#39;self&#39; http://* &#39;unsafe-inline&#39;; script-src &#39;self&#39; http://* &#39;unsafe-inline&#39; &#39;unsafe-eval&#39;"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta property="og:title" content="НейроКалик"><meta property="og:type" content="website"><meta name="description" content="НейроКалик"><meta name="theme-color" content="#5371FF"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="ui_transformers"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="ui_transformers"><link href="./main_files/app.8a36b813.css" rel="preload" as="style"><link href="./main_files/chunk-vendors.ce802492.css" rel="preload" as="style"><link href="./main_files/app.d95e849e.js" rel="preload" as="script"><link href="./main_files/chunk-vendors.36ef5a5b.js" rel="preload" as="script"><link href="./main_files/chunk-vendors.ce802492.css" rel="stylesheet"><link href="./main_files/app.8a36b813.css" rel="stylesheet">
+
+<script>
+    function load() {
+      document.getElementById("button_push").disabled = true;
+      document.getElementById("button_hard").disabled = true;
+      document.getElementById("loader_div").innerHTML = `<div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>`;
+	  var xhr = new XMLHttpRequest();
+
+	  xhr.onreadystatechange = function() {
+	    if (xhr.readyState === 4) {
+	      document.getElementById("text_here").textContent = xhr.response;
+	      document.getElementById("button_hard").disabled = false;
+	      document.getElementById("button_push").disabled = false;
+	      document.getElementById("loader_div").innerHTML = "";
+	    }
+	  }
+
+	  xhr.open('POST', '/', true);
+	  xhr.send('');
+	}
+
+	 function load_hard() {
+      document.getElementById("button_hard").disabled = true;
+      document.getElementById("button_push").disabled = true;
+      document.getElementById("loader_div").innerHTML = `<div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>`;
+	  var xhr = new XMLHttpRequest();
+
+	  xhr.onreadystatechange = function() {
+	    if (xhr.readyState === 4) {
+	      document.getElementById("text_here").textContent = xhr.response;
+	      document.getElementById("button_hard").disabled = false;
+	      document.getElementById("button_push").disabled = false;
+	      document.getElementById("loader_div").innerHTML = "";
+	    }
+	  }
+
+	  xhr.open('POST', '/hard', true);
+	  xhr.send('');
+	}
+
+	window.onload = load;
+  </script>
+
+  <style type="text/css">
+  	
+  	.loader {
+    background: #000;
+    background: radial-gradient(#222, #000);
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: center;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+.loader-line-wrap {
+    animation: 
+    spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+  ;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+.loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+.loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+.loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+.loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+.loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+    border-color: hsl(0, 80%, 60%);
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+.loader-line-wrap:nth-child(2) .loader-line {
+    border-color: hsl(60, 80%, 60%);
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+.loader-line-wrap:nth-child(3) .loader-line {
+    border-color: hsl(120, 80%, 60%);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+.loader-line-wrap:nth-child(4) .loader-line {
+    border-color: hsl(180, 80%, 60%);
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+.loader-line-wrap:nth-child(5) .loader-line {
+    border-color: hsl(240, 80%, 60%);
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+    0%, 15% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
+
+
+</head><body class="has-navbar-fixed-top"><noscript><strong>К сожалению, Калик не работает без включенного JavaScript.</strong></noscript><div data-v-0a1f7153="" class="main"><nav data-v-0a1f7153="" role="navigation" aria-label="main navigation" class="navbar is-fixed-top"><div class="navbar-brand"><a data-v-0a1f7153="" href="" aria-current="page" class="navbar-item router-link-exact-active router-link-active"><img data-v-0a1f7153="" src="./main_files/logo.jpg" alt="НейроКалик" class="neuro-logo"></a><a role="button" aria-label="menu" class="navbar-burger burger"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div><div class="navbar-menu"><div class="navbar-start"></div></div></nav><section data-v-0a1f7153="" class="section"><div data-v-0a1f7153="" class="columns is-mobile"><div data-v-0a1f7153="" class="column is-full"><div data-v-04b282fc="" data-v-0a1f7153=""><div data-v-efc1994e="" data-v-04b282fc=""><!----><div data-v-efc1994e="" class="box"><div data-v-efc1994e="" id="editorjs" class="ql-container"><div class="ql-editor" data-gramm="false" contenteditable="true" data-placeholder=""><p><span id="text_here" style="color: rgb(0, 0, 0);"></span></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div></div><div data-v-efc1994e="" class="columns is-mobile controls-pane"><div data-v-efc1994e="" class="column is-1"></div><div data-v-efc1994e="" class="column has-text-centered"><button data-v-efc1994e="" type="button" class="button transform-btn is-small is-primary" onclick="load();" id="button_push"><span style="font-size: 17px;"> Easy kalik  </span> <!----></button>&nbsp;<button data-v-efc1994e="" type="button" class="button transform-btn is-small is-primary" onclick="load_hard();" id="button_hard"><span style="font-size: 17px;"> Hard kalik  </span> <!----></button><div class="loader-inner" style="">
+  
+  	<div id="loader_div">
+    
+    </div>
+
+
+  </div></div><div data-v-efc1994e="" class="column is-1"></div></div></div><br><div style="text-align: center; font-size: 10px;">Обучено на постах группы Калик), гачи цитатах, методичках по физпракам и отборной пасте с Лурка</div><div style="text-align: center; font-size: 20px;">А ещё нейрокалику можно <a target="_blank" href="https://vk.me/club206108663">написать в вк!</a></div></div><div data-v-04b282fc="" class="save-control columns"><div data-v-04b282fc="" class="column is-1"><!----></div></div><!----><!----></div></div></div></section><footer data-v-0a1f7153="" class="footer"><div data-v-0a1f7153="" class="content has-text-centered"></div><div data-v-0a1f7153="" class="content has-text-centered footer-support"><h4 data-v-0a1f7153="" class="footer-title" style="font-size: 10px;">НейроКалик by Андрей Тюняткин © 2021 <br><br>v 0.2.40<strong data-v-0a1f7153="" style="color: rgb(83, 113, 255); font-size: 10px;"></strong></h4></div></footer></div><script type="text/javascript" async="" src="./main_files/analytics.js"></script><script async="" src="./main_files/js"></script><script>window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-154887368-1');</script><script src="./main_files/chunk-vendors.36ef5a5b.js"></script><script src="./main_files/app.d95e849e.js"></script></body></html>
